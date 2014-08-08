@@ -1,7 +1,6 @@
 import DS from "ember-data";
-import Ember from "ember";
 
-export default Ember.Model.extend({
- 	type: DS.attr('string'),
- 	reading: DS.belongsTo('sensor')
+export default DS.Model.extend({
+ 	data: DS.attr('float'),
+ 	sensor: DS.belongsTo('sensor')
 });

@@ -1,7 +1,7 @@
 import DS from "ember-data";
-import Ember from "ember";
 
-export default Ember.Model.extend({
+export default DS.Model.extend({
  	type: DS.attr('string'),
- 	readings: DS.hasMany('reading')
+ 	readings: DS.hasMany('reading'),
+  user: DS.belongsTo('user')
 });
