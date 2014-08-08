@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GrowlogWeb Tests</title>
+    <title>GrowReport Tests</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{BASE_TAG}}
 
     <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/growlog-web.css">
+    <link rel="stylesheet" href="assets/grow-report.css">
     <link rel="stylesheet" href="assets/test-support.css">
     <style>
       #ember-testing-container {
@@ -34,15 +34,15 @@
     <div id="qunit-fixture"></div>
 
     <script>
-      window.GrowlogWebENV = {{ENV}};
-      window.EmberENV = window.GrowlogWebENV.EmberENV;
+      window.GrowReportENV = {{ENV}};
+      window.EmberENV = window.GrowReportENV.EmberENV;
     </script>
     <script src="assets/test-support.js"></script>
     <script src="assets/vendor.js"></script>
-    <script src="assets/growlog-web.js"></script>
+    <script src="assets/grow-report.js"></script>
     <script src="testem.js"></script>
     <script>
-      require('growlog-web/tests/test-helper');
+      require('grow-report/tests/test-helper');
     </script>
     <script src="assets/test-loader.js"></script>
   </body>

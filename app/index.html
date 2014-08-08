@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GrowlogWeb</title>
+    <title>Grow Report</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,21 +11,20 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/growlog-web.css">
+    <link rel="stylesheet" href="assets/grow-report.css">
   </head>
   <body>
     <script>
-      window.GrowlogWebENV = {{ENV}};
-      window.EmberENV = window.GrowlogWebENV.EmberENV;
+      window.GrowReportENV = {{ENV}};
+      window.EmberENV = window.GrowReportENV.EmberENV;
     </script>
     <script src="assets/vendor.js"></script>
-    <script src="assets/growlog-web.js"></script>
+    <script src="assets/grow-report.js"></script>
     <script>
-      window.GrowlogWeb = require('growlog-web/app')['default'].create(GrowlogWebENV.APP);
+      window.GrowReport = require('grow-report/app')['default'].create(GrowReportENV.APP);
     </script>
   </body>
 </html>

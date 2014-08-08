@@ -1,7 +1,7 @@
 /* global require */
 
-var Application = require('growlog-web/app')['default'];
-var Router = require('growlog-web/router')['default'];
+var Application = require('grow-report/app')['default'];
+var Router = require('grow-report/router')['default'];
 import Ember from 'ember';
 
 export default function startApp(attrs) {
