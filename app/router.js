@@ -8,7 +8,6 @@ Router.map(function() {
   this.route('login');
   this.route('sensors');
   this.resource('operations', function() {
-    this.route('new');
     this.route('show', {path: ':operation_id'});
   });
 });

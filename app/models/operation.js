@@ -1,6 +1,24 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  rooms: DS.hasMany('room')
+var Operation = DS.Model.extend({
+  name: DS.attr('string')
 });
+
+Operation.reopenClass({
+    FIXTURES: [
+        {
+            id: 1,
+            name: "Complete Ember.js Tutorial",
+        },
+        {
+            id: 2,
+            name: "Checkout some more ember stuff",
+        },
+        {
+            id: 3,
+            name: "Solve world hunger (with Ember)",
+        }
+    ]
+})
+
+export default Operation
