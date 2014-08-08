@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('sensors');
+  this.resource('sensors');
   this.resource('operations', function() {
     this.route('show', {path: ':operation_id'});
   });
