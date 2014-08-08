@@ -1,5 +1,5 @@
 {
-  "name": "growlog-web",
+  "name": "growreport",
   "version": "0.0.0",
   "private": true,
   "directories": {
@@ -11,7 +11,7 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/stefanpenner/ember-cli",
+  "repository": "https://github.com/growreport/web",
   "engines": {
     "node": ">= 0.10.0"
   },
