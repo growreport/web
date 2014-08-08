@@ -1,3 +1,10 @@
 <h1>Sensors</h1>
 
-{{outlet}}
+{{#each model}}
+Type:{{type}} <br/>
+
+Readings: 
+{{! try to figure out how to display readings? }}
+Data: {{readings.data}}<br/>
+<br/><br/>
+{{/each}}
