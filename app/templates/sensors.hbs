@@ -5,6 +5,9 @@ Type:{{type}} <br/>
 
 Readings: 
 {{! try to figure out how to display readings? }}
+{{#each reading in readings}}
+{{reading.data}}
+{{/each}}
 <br/><br/>
 {{/each}}
 
