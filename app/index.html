@@ -19,7 +19,11 @@
   <body>
     <script>
       window.GrowReportENV = {{ENV}};
-      window.ENV = window.MyAppENV;
+      window.ENV = window.GrowReportENV;
+      window.ENV['simple-auth'] = {
+        authorizer: 'authorizer:custom',
+        authenticator: 'authenticator:custom'
+      }
       window.EmberENV = window.GrowReportENV.EmberENV;
     </script>
     <script src="assets/vendor.js"></script>
