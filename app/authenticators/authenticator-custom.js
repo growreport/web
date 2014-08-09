@@ -1,5 +1,6 @@
 import Base from 'simple-auth/authenticators/base';
 import Ember from 'ember';
+
 export default Base.extend({
   /*restore: function(properties) {
     console.log('restore');
@@ -13,6 +14,7 @@ export default Base.extend({
     });
   },*/
 	authenticate: function(credentials) { 
+    console.log("welcome");
 		return new Ember.RSVP.Promise(function (resolve, reject) {
             // make the request to authenticate the user at endpoint /v3/token
             Ember.$.ajax({
