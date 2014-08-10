@@ -2,7 +2,7 @@ import Base from 'simple-auth/authenticators/base';
 import Ember from 'ember';
 
 export default Base.extend({
-  /*restore: function(properties) {
+  restore: function(properties) {
     console.log('restore');
     console.log(properties);
     return new Ember.RSVP.Promise(function(resolve, reject) {
@@ -12,9 +12,12 @@ export default Base.extend({
         reject();
       }
     });
-  },*/
+  },
 	authenticate: function(credentials) { 
-    console.log("welcome");
+    var _this = this;
+    Ember.$.ajaxSetup({
+      headers: { 'Authorization': 'Bearer ' + _this.get('session.auth_token') }
+    });
 		return new Ember.RSVP.Promise(function (resolve, reject) {
             // make the request to authenticate the user at endpoint /v3/token
             Ember.$.ajax({
@@ -33,8 +36,8 @@ export default Base.extend({
               });
             });
 		});
-	}/*
+	},
   invalidate: function() {
   return Ember.RSVP.resolve();
-  } */
+  } 
 });
