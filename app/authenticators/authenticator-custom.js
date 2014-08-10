@@ -16,7 +16,7 @@ export default Base.extend({
 	authenticate: function(credentials) { 
     var _this = this;
     Ember.$.ajaxSetup({
-      headers: { 'Authorization': 'Bearer ' + _this.get('session.auth_token') }
+      headers: { 'Authorization': 'blavlsaf ' + _this.get('session.auth_token') }
     });
 		return new Ember.RSVP.Promise(function (resolve, reject) {
             // make the request to authenticate the user at endpoint /v3/token

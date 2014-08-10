@@ -12,7 +12,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
       this.get('session').authenticate(this.get('authenticator'), data).then(function() {
         _this.set('message', 'login successful');
       }, function(error) {
-        _this.set('message',  JSON.parse(error).error);
+        _this.set('message',  JSON.parse(error));
       });
     }
   }

@@ -9,6 +9,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   	actions: {
   		authenticateSession: function() {
   			console.log('yolosf');
+  					console.log(this.get('session'));
   			this.get('session').authenticate('authenticator:custom', {});
   		}
  	 }
