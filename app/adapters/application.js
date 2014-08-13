@@ -1,6 +1,6 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.ActiveModelAdapter.extend({
-  host: 'http://localhost:3000',
-  headers: { 'Authorization': 'blavlsaf ' + _this.get('session.auth_token') }
+  host: 'http://localhost:3000'
 });

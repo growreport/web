@@ -11,6 +11,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
       var data = this.getProperties('identification', 'password');
       this.get('session').authenticate(this.get('authenticator'), data).then(function(successer, successer2) {
         _this.set('message', 'login successful');
+        console.log(_this.get('session.auth_token'));
         console.log(successer);
         console.log(successer2);
  console.log(arguments);

@@ -7,6 +7,7 @@ export default Base.extend({
     console.log(properties);
     return new Ember.RSVP.Promise(function(resolve, reject) {
       if (!Ember.isEmpty(properties.auth_token)) {
+        Ember.$.cookie('auth_token', properties.auth_token);
         resolve(properties);
       } else {
         reject();
@@ -14,7 +15,6 @@ export default Base.extend({
     });
   },
 	authenticate: function(credentials) { 
-    var _this = this;
     console.log('authenticate call');
   
 		return new Ember.RSVP.Promise(function (resolve, reject) {
@@ -24,10 +24,13 @@ export default Base.extend({
               type: 'POST',
               data: { session: { email: credentials.identification, password: credentials.password } }
             }).then(function(response) {
-                console.log('auth_token: ' + response.auth_token);
                 // resolve (including the account id) as the AJAX request was successful; all properties this promise resolves
                 // with will be available through the session
-                resolve({ auth_token: response.auth_token});
+Ember.$.ajaxSetup({
+      headers: {
+        'authorization':  'Token ' + response.auth_token
+      }
+    });                resolve({ auth_token: response.auth_token});
              }, function(xhr, status, error) {
                 reject(xhr.responseText);
             });
