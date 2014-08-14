@@ -7,8 +7,12 @@ export default Base.extend({
     console.log(properties);
     return new Ember.RSVP.Promise(function(resolve, reject) {
       if (!Ember.isEmpty(properties.auth_token)) {
-        Ember.$.cookie('auth_token', properties.auth_token);
-        resolve(properties);
+         Ember.$.ajaxSetup({
+            headers: {
+              'authorization':  'Token ' + properties.auth_token
+            }
+          });
+        resolve({ auth_token: properties.auth_token});
       } else {
         reject();
       }
@@ -26,17 +30,18 @@ export default Base.extend({
             }).then(function(response) {
                 // resolve (including the account id) as the AJAX request was successful; all properties this promise resolves
                 // with will be available through the session
-Ember.$.ajaxSetup({
-      headers: {
-        'authorization':  'Token ' + response.auth_token
-      }
-    });                resolve({ auth_token: response.auth_token});
+              Ember.$.ajaxSetup({
+                    headers: {
+                      'authorization':  'Token ' + response.auth_token
+                    }
+              });
+              resolve({ auth_token: response.auth_token});
              }, function(xhr, status, error) {
                 reject(xhr.responseText);
             });
 		});
 	},
   invalidate: function() {
-  return Ember.RSVP.resolve();
+    return Ember.RSVP.resolve();
   } 
 });
