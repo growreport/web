@@ -27,7 +27,6 @@
 </div><!-- /.container-fluid -->
 </nav>
 <div class='container'>
-{{session.auth_token}}
 {{#if session.isAuthenticated}}
   <a {{ action 'invalidateSession' }}>Logout</a>
 {{else}}

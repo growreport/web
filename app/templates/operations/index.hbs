@@ -1,5 +1,15 @@
+{{#if showForm}}
+<button {{action 'hide'}}>Hide</button>
+{{else}}
+<button {{action 'show'}}>Add operation</button>
+{{/if}}
 <ul>
 {{#each}}
   <li>{{name}}</li>
+  <ul>
+  {{#each room in rooms}}
+  	<li>{{room.name}}</li>
+  {{/each}}
+  </ul>
 {{/each}}
 </ul>
